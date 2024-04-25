@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #4CAF50, #FFC107);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  #navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex:1;
+  }
+  #navbar ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  #navbar ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+    color:black;
+  }
+  #navbar ul li a:hover {
+    color: #00f;
+  }
+  .scrolled {
+    background-color: #333;
+  }
+  .content{
+    padding-top:60px;
+    text-align:center; 
+    font-style:cooper;
+  }
+ .pattern {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 100px auto;
+    background: linear-gradient(45deg, #4CAF50, #FFC107);
+    transform: rotate(45deg);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  .pattern:before, .pattern:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(45deg, #ff007f, #007bff);
+    border-radius: 50%;
+  }
+  .pattern:before {
+    top: -50px;
+    left: -50px;
+    transform: rotate(-45deg);
+  }
+  .pattern:after {
+    bottom: -50px;
+    right: -50px;
+    transform: rotate(-45deg);
+  }
+  .pattern:hover {
+    background: linear-gradient(45deg, #ff007f, #007bff);
+  }
+</style>
+</head>
+<body>
+<div id="navbar">
+ <img src="R.png" alt="Your Logo" style="max-height: 40px;">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutus.html">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+<div class="content">
+    <h2>Welcome to my website.</h2>
+    <hr></hr>
+    <div class="pattern"></div>
+</div>
+<script>
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>

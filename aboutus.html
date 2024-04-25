@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  #navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, #4CAF50, #FFC107);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  #navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    flex: 1; /* Expand to fill available space */
+  }
+  #navbar ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  #navbar ul li a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+    color:black;
+  }
+  #navbar ul li a:hover {
+    color: #f00;
+  }
+  .scrolled {
+    background-color: #333;
+  }
+  .content {
+    padding-top: 60px; /* Adjust according to the height of your fixed navbar */
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<div id="navbar">
+ <img src="R.png" alt="Your Logo" style="max-height: 40px;">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="aboutus.html">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</div>
+<div class="content">
+  <h1>About Us</h1>
+  <p>It is a basic interactive navigation menu bar</p>
+  <p>And it is develop by prem vishwakarma.</p>
+  <p>Under the guidences of prodigy infotech</p>
+</div>
+<script>
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>
